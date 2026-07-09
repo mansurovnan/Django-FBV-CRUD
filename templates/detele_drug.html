@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Drug</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            background:linear-gradient(135deg,#ff512f,#dd2476);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .card{
+            width:850px;
+            border:none;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 20px 45px rgba(0,0,0,.35);
+        }
+
+        .left{
+            background:url("https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=80");
+            background-size:cover;
+            background-position:center;
+            min-height:600px;
+        }
+
+        .right{
+            background:white;
+            padding:40px;
+        }
+
+        h2{
+            color:#dc3545;
+            text-align:center;
+            font-weight:bold;
+            margin-bottom:20px;
+        }
+
+        .warning{
+            background:#fff3cd;
+            color:#856404;
+            border:1px solid #ffeeba;
+            padding:15px;
+            border-radius:10px;
+            margin-bottom:25px;
+            text-align:center;
+            font-weight:bold;
+        }
+
+        .info{
+            background:#f8f9fa;
+            padding:12px;
+            border-radius:10px;
+            margin-bottom:15px;
+            font-size:17px;
+        }
+
+        .btn-delete{
+            width:100%;
+            background:#dc3545;
+            color:white;
+            font-size:18px;
+            border:none;
+            border-radius:12px;
+            padding:10px;
+            margin-bottom:15px;
+        }
+
+        .btn-delete:hover{
+            background:#bb2d3b;
+        }
+
+        .btn-cancel{
+            width:100%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="card">
+
+<div class="row g-0">
+
+<div class="col-md-5 left"></div>
+
+<div class="col-md-7 right">
+
+<h2>🗑 Delete Drug</h2>
+
+<div class="warning">
+⚠ Are you sure you want to delete this medicine?
+</div>
+
+<div class="info">
+<strong>Name:</strong> {{ drug.name }}
+</div>
+
+<div class="info">
+<strong>Description:</strong><br>
+{{ drug.desc }}
+</div>
+
+<div class="info">
+<strong>Price:</strong> ${{ drug.price }}
+</div>
+
+<div class="info">
+<strong>Manufacturer:</strong> {{ drug.fabric }}
+</div>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <button type="submit" class="btn-delete">
+        🗑 Delete Drug
+    </button>
+
+    <a href="{% url 'drug_list' %}" class="btn btn-primary btn-lg btn-cancel">
+        ⬅ Cancel
+    </a>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

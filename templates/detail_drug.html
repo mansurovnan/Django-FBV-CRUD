@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Detail</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            background:linear-gradient(135deg,#00c6ff,#0072ff);
+            font-family:Arial, Helvetica, sans-serif;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .card{
+            width:900px;
+            border:none;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 15px 40px rgba(0,0,0,.3);
+        }
+
+        .left{
+            background:url("https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=80");
+            background-size:cover;
+            background-position:center;
+            min-height:600px;
+        }
+
+        .right{
+            background:white;
+            padding:40px;
+        }
+
+        h2{
+            text-align:center;
+            color:#0d6efd;
+            font-weight:bold;
+            margin-bottom:30px;
+        }
+
+        .info{
+            font-size:18px;
+            margin-bottom:15px;
+            padding:12px;
+            background:#f8f9fa;
+            border-radius:10px;
+        }
+
+        .badge{
+            font-size:15px;
+            padding:8px 15px;
+        }
+
+        .btn-back{
+            width:100%;
+            margin-top:25px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="card">
+
+<div class="row g-0">
+
+<div class="col-md-5 left"></div>
+
+<div class="col-md-7 right">
+
+<h2>💊 Drug Details</h2>
+
+<div class="info">
+<strong>Name:</strong> {{ drug.name }}
+</div>
+
+<div class="info">
+<strong>Description:</strong><br>
+{{ drug.desc }}
+</div>
+
+<div class="info">
+<strong>Price:</strong> ${{ drug.price }}
+</div>
+
+<div class="info">
+<strong>Manufacturer:</strong> {{ drug.fabric }}
+</div>
+
+<div class="info">
+<strong>Created At:</strong> {{ drug.created_at }}
+</div>
+
+<div class="info">
+<strong>Status:</strong>
+
+{% if drug.is_active %}
+<span class="badge bg-success">Available</span>
+{% else %}
+<span class="badge bg-danger">Unavailable</span>
+{% endif %}
+
+</div>
+
+<a href="{% url 'drug_list' %}" class="btn btn-primary btn-lg btn-back">
+⬅ Back to Drug List
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

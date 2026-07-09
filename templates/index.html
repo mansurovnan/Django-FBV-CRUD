@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-6">
+
+            <h1 class="display-3 fw-bold text-primary">
+                💊 Pharmacy Management
+            </h1>
+
+            <p class="lead mt-4">
+                Welcome to our modern Pharmacy Management System.
+                Easily manage drugs, users and organize your pharmacy quickly and securely.
+            </p>
+
+            <div class="mt-4">
+
+                <a href="/dori/list/" class="btn btn-primary btn-lg me-3">
+                    💊 View Drugs
+                </a>
+
+                <a href="/user/list/" class="btn btn-success btn-lg">
+                    👤 View Users
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 text-center">
+
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=80"
+                 class="img-fluid rounded-4 shadow-lg"
+                 alt="Pharmacy">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="container mt-5">
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="card text-center p-4">
+
+                <h1>💊</h1>
+
+                <h3>Medicine</h3>
+
+                <p>
+                    Add, edit, view and delete medicines easily.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card text-center p-4">
+
+                <h1>👤</h1>
+
+                <h3>Users</h3>
+
+                <p>
+                    Manage all pharmacy users in one place.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card text-center p-4">
+
+                <h1>⚡</h1>
+
+                <h3>Fast & Secure</h3>
+
+                <p>
+                    Built with Django using CRUD operations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
