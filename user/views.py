@@ -1,15 +1,19 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import User
 
+
 def home(request):
-    pass
+    return render(request, "index.html")
+
+
 def user_list(request):
     users = User.objects.all()
-    return render(request, "user_list.html", {"users": users})
+    return render(request, "list_user.html", {"users": users})
 
 
 def create_user(request):
     if request.method == "POST":
+
         User.objects.create(
             full_name=request.POST.get("full_name"),
             email=request.POST.get("email"),
@@ -21,8 +25,6 @@ def create_user(request):
         return redirect("user_list")
 
     return render(request, "create_user.html")
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import User
 
 
 def detail_user(request, id):

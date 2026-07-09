@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
 
 class User(models.Model):
     full_name = models.CharField(max_length=100)
@@ -15,6 +13,6 @@ class User(models.Model):
         return self.full_name
 
     class Meta:
-        verbose_name = 'user'
-        verbose_name_plural = 'users'
-        ordering = ['full_name']
+        verbose_name = "User"
+        verbose_name_plural = "Users"
+        ordering = ["-created_at"]

@@ -1,13 +1,36 @@
 from django.contrib import admin
-
-# Register your models here.
-from django.contrib import admin
 from .models import User
-# Register your models here.
-@admin.register(User)
-class drugadmin(admin.ModelAdmin):
-    list_display = ['full_name']
-    list_filter = ['full_name', 'phone']
-    search_fields = ['full_name', 'email']
 
-#admin.site.register(Drug, drugadmin)
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "full_name",
+        "email",
+        "phone",
+        "is_active",
+        "created_at",
+    )
+
+    list_display_links = (
+        "id",
+        "full_name",
+    )
+
+    list_filter = (
+        "is_active",
+        "created_at",
+    )
+
+    search_fields = (
+        "full_name",
+        "email",
+        "phone",
+    )
+
+    ordering = (
+        "-created_at",
+    )
+
+    list_per_page = 10
